@@ -10,7 +10,7 @@ if (!isset($_SESSION['username'])) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logout'])) {
     // stop the session and redirect to the login page
     session_destroy();
-    header('Location: login_cust.php');
+    header('Location: login_cust.php');a
     exit();
 }
 
