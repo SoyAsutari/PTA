@@ -1,0 +1,128 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set a white background for the entire page */
+body {
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+
+}
+
+/* Style the header */
+header {
+    background-color: #FFFFFF;
+    color: #000000;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+/* Style the h1 in the header */
+header h1 {
+    font-size: 24px;
+}
+
+/* Style the navigation links */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+/* Style buttons */
+.button {
+  display: inline-block;
+  padding: 10px 20px; 
+  background-color: #202021; 
+  color: white; 
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px; 
+  margin-right: 10px; 
+}
+
+.logout-button {
+  background-color: #dc3545; 
+}
+
+.manage-button {
+    background-color: #ff0000;
+}
+
+.add-button {
+    background-color: #ff0000;
+}
+
+/* Style the main content */
+main {
+    padding: 20px;
+    background-color: #f2f2f2;
+}
+
+/* Style the form container */
+.add-user-form {
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px; /* Set the maximum width of the form container */
+    margin: 0 auto; /* Center the form container horizontally */
+}
+
+/* Style form labels and input fields */
+.add-user-form label {
+    display: block;
+    margin: 10px 0;
+    font-weight: bold;
+    text-align: left; /* Align labels to the left */
+}
+
+.add-user-form input[type="text"],
+.add-user-form input[type="tel"],
+.add-user-form input[type="email"],
+.add-user-form input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: inline-block; /* Display input fields side by side with labels */
+    box-sizing: border-box; /* Include padding and border in the input field's total width */
+}
+
+/* Style the submit button */
+.add-user-form button[type="submit"] {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Style validation error messages */
+.error-box {
+    background-color: #ffcccc;
+    color: #ff0000;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+/* Style success message */
+.success-box {
+    background-color: #ccffcc;
+    color: #009900;
+    padding: 10px;
+    margin-top: 10px;
+}

@@ -1,0 +1,102 @@
+/* CSS in admin 1*/
+header {
+    background-color: #FFFFFF;
+    color: #000000;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+main {
+  background-color: #E7E7E7;
+}
+table {
+  width: 80%; 
+  border-collapse: collapse; 
+  margin: 20px auto; 
+  background-color: #f5f5f5; 
+}
+
+/* CSS for table headers */
+table th {
+  background-color: #ff0000; 
+  color: white; 
+  padding: 10px; 
+  text-align: left; 
+}
+
+/* CSS for table rows */
+table td {
+  border: 1px solid #ddd;
+  padding: 8px; 
+}
+
+/* CSS for the navigation links (Manage Users, Add Users) */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+  /* Add spacing between navigation links */
+  margin-right: 20px; 
+}
+
+nav ul li a {
+  text-decoration: none; 
+  color: #0e1114; 
+  font-weight: bold;
+}
+
+/* CSS for the "Logout" link in the footer */
+footer a {
+  text-decoration: none; 
+  color: #53575a; 
+  font-weight: bold;
+}
+
+/* CSS for the buttons */
+.button {
+  display: inline-block;
+  padding: 10px 20px; 
+  background-color: #202021; 
+  color: white; 
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px; 
+  margin-right: 10px; 
+}
+
+
+/* CSS for button colors (Manage Users, Add Users) */
+.manage-button {
+  background-color: #ff0000;
+}
+
+.add-button {
+  background-color: #ff0000; 
+}
+
+/* CSS for button colors (Logout) */
+.logout-button {
+  background-color: #dc3545; 
+}
+/* Style for the delete button */
+.delete-button {
+  background-color: #dc3545; 
+  color: #fff; 
+  border: none;
+  cursor: pointer; 
+  text-decoration: none; 
+  padding: 5px 10px; 
+}
+
+/* Style for the delete button on hover */
+.delete-button:hover {
+  background-color: #cc0000; 
+}
+

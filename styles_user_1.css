@@ -1,0 +1,54 @@
+
+.insurance-table {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  header {
+    background-color: #FFFFFF;
+    color: #000000;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  main {
+    padding: 20px;
+    background-color: #f2f2f2;
+}
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #FF0000;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #FFFFFF;
+  }
+  
+ /* Style for the Logout button */
+.logout-button {
+  background-color: #f44336; 
+  color: white; 
+  border: none; 
+  padding: 10px 20px; 
+  cursor: pointer; 
+}
+
+/* Style for the Logout button on hover */
+.logout-button:hover {
+  background-color: #d32f2f; 
+}
