@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logout'])) {
 }
 
 // Get the admin's username from the session
-$adminUsername = $_SESSION['username']; mankim comel
+$adminUsername = $_SESSION['username'];
 
 // Database connection details
 $servername = "localhost";
