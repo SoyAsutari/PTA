@@ -12,7 +12,7 @@
   <img src="gambar/LOGO.png" width="200" height="90">
   <nav>
     <ul>
-      <li><a href="MainPage.php" class="btn"> gbdgrgr Home</a></li>
+      <li><a href="MainPage.php" class="btn"> Home</a></li>
       <li><a href="policypage.php" class="btn">Policies</a></li>
       <li><a href="claims.html" class="btn">Claims</a></li>
       <li><a href="contactpage.php" class="btn">Contact</a></li>
