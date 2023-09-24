@@ -45,7 +45,7 @@ $conn->close();
     <form class="login-form" action="" method="POST">
         <h2>Login Pengguna</h2>
         <?php if (isset($_GET['error']) && $_GET['error'] === 'invalid') { ?>
-            <p style="color: red;" class="error-message">Invalid login credentials. Please try again.</p>
+            <p style="color: red;" class="error-message">Please try again.</p>
         <?php } ?>
         <label for="tel">Phone Number</label>
         <input type="tel" id="tel" name="tel" placeholder="Enter your phone number" required>
