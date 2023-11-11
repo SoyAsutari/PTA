@@ -32,7 +32,8 @@ if ($conn->connect_error) {
 }
 
 // SQL query to fetch insurance data
-$sql = "SELECT insurance_id, username, tel FROM users";
+$sql = "SELECT insurance_id, username, tel, status FROM users";
+
 
 // Execute the query
 $result = $conn->query($sql);
@@ -76,6 +77,7 @@ $conn->close();
                         <th>Insurance ID</th>
                         <th>Username</th>
                         <th>Phone Number</th>
+                        <th>Status</th>
                         <th>Action</th> 
                     </tr>
                 </thead>
@@ -87,6 +89,7 @@ $conn->close();
                         echo "<td>" . $row['insurance_id'] . "</td>";
                         echo "<td>" . $row['username'] . "</td>";
                         echo "<td>" . $row['tel'] . "</td>";
+                        echo "<td>" . $row['status'] . "</td>";
                         echo "<td><a href='delete_user.php?insurance_id=" . $row['insurance_id'] . "' class='delete-button' onclick='return confirmDelete()'>Delete</a></td>"; 
                         echo "</tr>";
                     }

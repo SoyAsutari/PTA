@@ -1,3 +1,5 @@
 1.Open cmd
 2.Change diractory to insurance folder
-3.Git Clone https://github.com/SoyAsutari/PTA.git
+-buat cd
+-paste C:\xampp\htdocs\System Insurance
+3.Git clone https://github.com/SoyAsutari/PTA.git
