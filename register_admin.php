@@ -7,15 +7,18 @@ if (!isset($_SESSION['username'])) {
     header('Location: login_admin.php');
     exit();
 }
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logout'])) {
     // stop the session and redirect to the login page
     session_destroy();
     header('Location: login_admin.php');
     exit();
 }
+
 // Get the admin's username from the session
 $adminUsername = $_SESSION['username'];
 $newAdminUsername = $newAdminPassword = $confirmAdminPassword = "";
+
 // if the input is not correct
 $errors = [];
 
@@ -42,13 +45,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Validate input fields
     if (empty($newAdminUsername) || empty($newAdminPassword) || empty($confirmAdminPassword)) {
-        $errors[] = "fields are required.";
+        $errors[] = "All fields are required.";
     }
 
     // Check if the password and confirm password match
     if ($newAdminPassword !== $confirmAdminPassword) {
         $errors[] = "Password and Confirm Password do not match.";
     }
+
+    // Check if the username already exists
+    $checkUsernameQuery = "SELECT * FROM admins WHERE username = ?";
+    $checkStmt = $conn->prepare($checkUsernameQuery);
+    $checkStmt->bind_param("s", $newAdminUsername);
+    $checkStmt->execute();
+    $checkResult = $checkStmt->get_result();
+
+    if ($checkResult->num_rows > 0) {
+        $errors[] = "Username already exists. Please choose a different username.";
+    }
+
+    $checkStmt->close();
 
     // If there are no validation errors, insert the admin into the database
     if (empty($errors)) {
@@ -83,20 +99,18 @@ function sanitizeInput($data)
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register Admin</title>
-    <link rel="stylesheet" href="styles_register_admin.css"> 
+    <link rel="stylesheet" href="styles_register_admin.css">
 </head>
 <body>
     <header>
         <img src="gambar/LOGO.png" width="200" height="90">
-        <h1 >Welcome, <?php echo $adminUsername; ?>!</h1> <!-- Display the admin's username -->
-    <form method="post">
-    <button type="submit" name="logout" class="button logout-button">Logout</button>
-    </form> 
-
+        <h1>Welcome, <?php echo $adminUsername; ?>!</h1> <!-- Display the admin's username -->
+        <form method="post">
+            <button type="submit" name="logout" class="button logout-button">Logout</button>
+        </form>
     </header>
     <br>
     <nav>
-        
         <ul>
             <li><a class="button manage-button" href="admin_1.php">Manage Users</a></li>
             <li><a class="button add-button" href="add_users.php">Add Users</a></li>

@@ -88,7 +88,6 @@ function sanitizeInput($data)
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add User</title>
     <link rel="stylesheet" href="styles_add_users.css">
-
 </head>
 <body>
     <header>
@@ -152,6 +151,21 @@ function sanitizeInput($data)
                 <input type="text" id="status" name="status" required>
                 <button type="submit" class="button add-button">Add User</button>
             </form>
+
+            <!-- Calculator -->
+            <h2>Calculator</h2>
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" step="any" placeholder="Enter amount" required>
+            <button type="button" onclick="calculate()">Calculate 1%</button>
+            <p id="result"></p>
+
+            <script>
+                function calculate() {
+                    var amount = document.getElementById('amount').value;
+                    var result = amount * 0.01;
+                    document.getElementById('result').innerText = "1% of the amount is: " + result;
+                }
+            </script>
         </section>
     </main>
 </body>

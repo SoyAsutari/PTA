@@ -31,9 +31,10 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// SQL query to fetch insurance data
-$sql = "SELECT insurance_id, username, tel, status FROM users";
-
+// SQL query to fetch insurance data with dynamically calculated status
+$sql = "SELECT insurance_id, username, tel, expiry_date,
+        CASE WHEN expiry_date < CURRENT_DATE() THEN 'EXPIRED' ELSE 'ACTIVE' END AS status
+        FROM users";
 
 // Execute the query
 $result = $conn->query($sql);
@@ -89,8 +90,8 @@ $conn->close();
                         echo "<td>" . $row['insurance_id'] . "</td>";
                         echo "<td>" . $row['username'] . "</td>";
                         echo "<td>" . $row['tel'] . "</td>";
-                        echo "<td>" . $row['status'] . "</td>";
-                        echo "<td><a href='delete_user.php?insurance_id=" . $row['insurance_id'] . "' class='delete-button' onclick='return confirmDelete()'>Delete</a></td>"; 
+                        echo "<td style='color: " . ($row['status'] == 'EXPIRED' ? 'red' : 'green') . "'>" . $row['status'] . "</td>";
+                        echo "<td><a href='delete_user.php?insurance_id=" . $row['insurance_id'] . "' class='delete-button' onclick='return confirmDelete()'>Delete</a></td>";
                         echo "</tr>";
                     }
                     ?>

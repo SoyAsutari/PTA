@@ -19,7 +19,7 @@ if ($conn->connect_error) {
 $currentDate = date("Y-m-d");
 
 // Update status based on expiry date
-$updateQuery = "UPDATE users SET status = 'Not Active' WHERE expiry_date < '$currentDate'";
+$updateQuery = "UPDATE users SET status = 'EXPIRED' WHERE expiry_date < '$currentDate'";
 $conn->query($updateQuery);
 
 // Close the database connection

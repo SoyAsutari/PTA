@@ -17,10 +17,12 @@ if ($conn->connect_error) {
 if (isset($_GET['id'])) {
     $insuranceId = $_GET['id'];
     
-    // SQL query to fetch user details based on insurance_id
-    $sql = "SELECT * FROM users WHERE insurance_id = $insuranceId";
-    
-    
+    // SQL query to fetch user details based on insurance_id with dynamically calculated status
+    $sql = "SELECT *, 
+            CASE WHEN expiry_date < CURRENT_DATE() THEN 'EXPIRED' ELSE 'ACTIVE' END AS status
+            FROM users 
+            WHERE insurance_id = $insuranceId";
+
     $result = $conn->query($sql);
     
     // Check if a user was found
@@ -79,7 +81,9 @@ $conn->close();
                     </tr>
                     <tr>
                         <th>Status</th>
-                        <td><?php echo $userData['status']; ?></td>
+                        <td style="color: <?php echo ($userData['status'] == 'EXPIRED' ? 'red' : 'green'); ?>">
+                            <?php echo $userData['status']; ?>
+                        </td>
                     </tr>
                     
                 </table>
