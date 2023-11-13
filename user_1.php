@@ -6,7 +6,7 @@ session_start();
 if (!isset($_SESSION['id'])) {
     // Redirect the user to the login page if the user is not authenticated
     header('Location: login_cust.php');
-    exit(); 
+    exit();
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logout'])) {
@@ -47,6 +47,68 @@ $result = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Dashboard</title>
     <link rel="stylesheet" href="styles_user_1.css">
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #00bcd4;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            color: #00bcd4;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #00bcd4;
+            color: white;
+        }
+
+        .logout-button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .logout-button:hover {
+            background-color: #d32f2f;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -73,7 +135,6 @@ $result = $conn->query($sql);
                 <tbody>
                     <?php
                     while ($row = $result->fetch_assoc()) {
-                        echo "<tr>";
                         echo "<tr data-id='" . $row['insurance_id'] . "'>";
                         echo "<td>" . $row['insurance_id'] . "</td>";
                         echo "<td>" . $row['model'] . "</td>";
@@ -105,20 +166,5 @@ $result = $conn->query($sql);
             });
         });
     </script>
-    <style>
-        /* Style for the Logout button */
-        .logout-button {
-            background-color: #f44336; 
-            color: white;
-            border: none; 
-            padding: 10px 20px;
-            cursor: pointer; 
-        }
-
-        /* Style for the Logout button on hover */
-        .logout-button:hover {
-            background-color: #d32f2f; 
-        }
-    </style>
 </body>
 </html>

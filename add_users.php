@@ -47,7 +47,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $type = sanitizeInput($_POST['type']);
     $plans = sanitizeInput($_POST['plans']);
     $expiry_date = sanitizeInput($_POST['expiry_date']);
-    $status = sanitizeInput($_POST['status']);
+    
+    // Calculate the status based on the expiry date and current date
+    $expiryDate = new DateTime($expiry_date);
+    $currentDate = new DateTime();
+    $status = ($expiryDate < $currentDate) ? 'EXPIRED' : 'ACTIVE';
 
     // Validate input fields (you can add more specific validation as needed)
     if (empty($username) || empty($id) || empty($tel) || empty($email) || empty($address) || empty($model) || empty($plate) || empty($type) || empty($plans) || empty($expiry_date) || empty($status)) {
@@ -57,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // If there are no validation errors, insert the user into the database
     if (empty($errors)) {
         // SQL query to insert the user into the database
-         $insertQuery = "INSERT INTO users (username, id, tel, email, address, model, plate, type, plans, expiry_date, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $insertQuery = "INSERT INTO users (username, id, tel, email, address, model, plate, type, plans, expiry_date, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($insertQuery);
         $stmt->bind_param("sssssssssss", $username, $id, $tel, $email, $address, $model, $plate, $type, $plans, $expiry_date, $status);
 
@@ -91,24 +95,23 @@ function sanitizeInput($data)
 </head>
 <body>
     <header>
-       <img src="gambar/LOGO.png" width="200" height="90">
-        <h1 >Welcome, <?php echo $adminUsername; ?>!</h1> <!-- Display the admin's username -->
-    <form method="post">
+        <img src="gambar/LOGO.png" width="200" height="90">
+        <h1>Welcome, <?php echo $adminUsername; ?>!</h1> <!-- Display the admin's username -->
+        <form method="post">
             <button type="submit" name="logout" class="button logout-button">Logout</button>
-    </form>
-    
+        </form>
     </header>
     
     <main>
-    <nav >
-        <!-- Navigation links for managing users and adding users -->
-        <ul>
-            <li><a class="button manage-button" href="admin_1.php">Manage Users</a></li>
-            <li><a class="button add-button" href="add_users.php">Add Users</a></li>
-            <li><a class="button add-button" href="register_admin.php">Register Admin</a></li> 
-        </ul>
-    </nav>
-    <br>
+        <nav>
+            <!-- Navigation links for managing users and adding users -->
+            <ul>
+                <li><a class="button manage-button" href="admin_1.php">Manage Users</a></li>
+                <li><a class="button add-button" href="add_users.php">Add Users</a></li>
+                <li><a class="button add-button" href="register_admin.php">Register Admin</a></li> 
+            </ul>
+        </nav>
+        <br>
         <section class="add-user-form">
             <h2>Add User</h2>
             <?php
@@ -148,7 +151,7 @@ function sanitizeInput($data)
                 <label for="expiry_date">Expiry Date</label>
                 <input type="date" id="expiry_date" name="expiry_date" required>
                 <label for="status">Status</label>
-                <input type="text" id="status" name="status" required>
+                <input type="text" id="status" name="status" value="<?php echo $status; ?>" readonly>
                 <button type="submit" class="button add-button">Add User</button>
             </form>
 
