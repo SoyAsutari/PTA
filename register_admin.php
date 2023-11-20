@@ -110,6 +110,7 @@ function sanitizeInput($data)
         </form>
     </header>
     <br>
+    <div class="pad">
     <nav>
         <ul>
             <li><a class="button manage-button" href="admin_1.php">Manage Users</a></li>
@@ -117,6 +118,8 @@ function sanitizeInput($data)
             <li><a class="button add-button" href="register_admin.php">Register Admin</a></li> <!-- Add a link to the Register Admin page -->
         </ul>
     </nav>
+    </div>
+    <div class="pad2">
     <main>
         <section class="register-admin-form">
             <h2>Register Admin</h2>
@@ -146,5 +149,6 @@ function sanitizeInput($data)
             </form>
         </section>
     </main>
+</div>
 </body>
 </html>

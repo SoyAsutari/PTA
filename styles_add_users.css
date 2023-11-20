@@ -6,31 +6,35 @@
 
 /* Set a white background for the entire page */
 body {
-    background-color: #fff;
-    font-family: Arial, sans-serif;
-
+  background-image: url(gambar/tile_background.png);
+  background-color: #f5e7e7;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
 }
 
 /* Style the header */
 header {
-    background-color: #FFFFFF;
-    color: #000000;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  height: 100px;
+  color: rgb(255, 255, 255);
+  background-color: #00ccff;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 /* Style the h1 in the header */
-header h1 {
-    font-size: 24px;
+h1 {
+  color: #000000;
 }
 
 /* Style the navigation links */
 nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
+  margin-left: 70px;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 
 nav ul li {
@@ -38,11 +42,17 @@ nav ul li {
     margin-right: 20px;
 }
 
+nav ul li a {
+  text-decoration: none; 
+  color: #ffffff; 
+  font-weight: bold;
+}
+
 /* Style buttons */
 .button {
   display: inline-block;
   padding: 10px 20px; 
-  background-color: #202021; 
+  background-color: #1d9485; 
   color: white; 
   text-decoration: none;
   border: none;
@@ -51,32 +61,68 @@ nav ul li {
   margin-right: 10px; 
 }
 
+/* Style for the Logout button */
 .logout-button {
-  background-color: #dc3545; 
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: rgb(255, 0, 0);
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+/* Style for the Logout button on hover */
+.logout-button:hover {
+  background-color: #c40000; 
 }
 
 .manage-button {
-    background-color: #ff0000;
+    background-color: #1d9485;
 }
 
 .add-button {
-    background-color: #ff0000;
+    background-color: #1d9485;
 }
 
 /* Style the main content */
 main {
     padding: 20px;
-    background-color: #f2f2f2;
+    background-color: #da0000;
 }
+
+.pad {
+  background-color: #ffffffa4;
+  border: 1px solid #ffffff;
+  border-radius: 12px;
+}
+
+  .pad2 {
+    border-radius: 32px;
+    border: 1px solid #ffffff;
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-top: 30px;
+    margin-bottom: 300px;
+  }
+
+  div.pad2 {
+    background-color: rgba(184, 184, 184, 0.6);
+  }
 
 /* Style the form container */
 .add-user-form {
-    background-color: #f2f2f2;
+    display: flex;
+    column-gap: 20px;
+    flex-wrap: wrap;
+    background-color: #ffffff;
     border-radius: 5px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 400px; /* Set the maximum width of the form container */
-    margin: 0 auto; /* Center the form container horizontally */
+    max-width: 1000px; /* Set the maximum width of the form container */
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 350px;
 }
 
 /* Style form labels and input fields */
@@ -85,6 +131,39 @@ main {
     margin: 10px 0;
     font-weight: bold;
     text-align: left; /* Align labels to the left */
+}
+
+.nama {
+
+    float: left;
+    width: 100px;
+    margin-top: 6px;
+  }
+  
+.kotak {
+    float: left;
+    width: 500px;
+    margin-top: 6px;
+  }
+  
+  /* Clear floats after the columns */
+.baris:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+.karkulator {
+    margin-top: 50px;
+    margin-left: 50px;
+
+}
+
+.pad3 {
+    background-color: #1d9485;
+    width: 300px;
+    height: 350px;
+    border-radius: 24px;
 }
 
 .add-user-form input[type="text"],

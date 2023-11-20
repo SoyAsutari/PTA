@@ -1,44 +1,61 @@
 /* styles_register_admin.css */
-
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
-    background-color: #f2f2f2;
 }
 
+body {
+    background-image: url(gambar/tile_background.png);
+    background-color: #f5e7e7;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+
 header {
-    background-color: #FFFFFF;
-    color: #000000;
+    height: 100px;
+    color: rgb(255, 255, 255);
+    background-color: #00ccff;
     padding: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-h1 {
-    margin: 0;
-}
+  h1 {
+    color: #000000;
+  }
 
-nav ul {
+  nav ul {
     list-style-type: none;
-    margin: 0;
     padding: 0;
-}
+    margin-left: 70px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
 
 nav ul li {
     display: inline;
     margin-right: 20px;
 }
 
-nav a.button {
+nav ul li a {
+    text-decoration: none; 
+    color: #ffffff; 
+    font-weight: bold;
+  }
+
+/* CSS for the buttons */
+.button {
     display: inline-block;
-    padding: 10px 20px;
-    background-color: #ff0000;
-    color: #fff;
+    padding: 10px 20px; 
+    background-color: #1d9485; 
+    color: white; 
     text-decoration: none;
-    border-radius: 5px;
-}
+    border: none;
+    cursor: pointer;
+    border-radius: 5px; 
+    margin-right: 10px; 
+  }
 
 main {
     max-width: 600px;
@@ -48,6 +65,26 @@ main {
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
+
+.pad {
+  background-color: #ffffffa4;
+  border: 1px solid #ffffff;
+  border-radius: 12px;
+}
+
+  .pad2 {
+    border-radius: 32px;
+    border: 1px solid #ffffff;
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-top: 30px;
+    margin-bottom: 300px;
+  }
+
+  div.pad2 {
+    background-color: rgba(184, 184, 184, 0.6);
+  }
+
 
 h2 {
     font-size: 24px;
@@ -61,7 +98,7 @@ label {
 
 input[type="text"],
 input[type="password"] {
-    width: 100%;
+    width: 580px;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
@@ -72,7 +109,7 @@ button.register-button {
     display: block;
     width: 100%;
     padding: 10px;
-    background-color: #ff0000;
+    background-color: #1d9485;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -86,18 +123,29 @@ button.register-button:hover {
 .button {
   display: inline-block;
   padding: 10px 20px; 
-  background-color: #202021; 
+  background-color: #1d9485; 
   color: white; 
   text-decoration: none;
   border: none;
   cursor: pointer;
   border-radius: 5px; 
-  margin-right: 10px; 
 }
 
+/* Style for the Logout button */
 .logout-button {
-  background-color: #dc3545; 
-}
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: rgb(255, 0, 0);
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  /* Style for the Logout button on hover */
+  .logout-button:hover {
+    background-color: #c40000; 
+  }
 
 .error-box {
     background-color: #f8d7da;

@@ -36,6 +36,16 @@ if (isset($_GET['id'])) {
     echo "Invalid request.";
 }
 
+session_start();
+
+$userId = $_SESSION['id'];
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logout'])) {
+    // stop the session and redirect to the login page
+    session_destroy();
+    header('Location: login_cust.php');
+    exit();
+}
 $conn->close();
 ?>
 
@@ -49,11 +59,15 @@ $conn->close();
 </head>
 <body>
     <header>
-     
+    <img src="gambar/LOGO.png" width="200" height="90">
+    <h1>Welcome, User <?php echo $userId; ?></h1>
+    <form method="post">
+    <button type="submit" name="logout" class="logout-button">Logout</button>
+    </form>
     </header>
     <main>
         <section class="user-details">
-            <h2>User Details</h2>
+            <h2 class="merah">User Details</h2>
             <?php if (isset($userData)) { ?>
                 <table class="user-table">
                     <tr>
@@ -96,9 +110,6 @@ $conn->close();
             <a href="user_1.php" class="return-button">Return</a>
         </section>
     </main>
-    <footer>
-        
-    </footer>
     <style>
         /* Style for the Return button */
         .return-button {

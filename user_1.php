@@ -48,26 +48,11 @@ $result = $conn->query($sql);
     <title>User Dashboard</title>
     <link rel="stylesheet" href="styles_user_1.css">
     <style>
-        body {
-            background-color: #f5f5f5;
-            font-family: 'Arial', sans-serif;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #00bcd4;
-            padding: 20px;
-            text-align: center;
-            color: white;
-        }
-
         main {
-            max-width: 800px;
+            max-width: 1500px;
+            margin-down: 20px;
             margin: 20px auto;
             padding: 20px;
-            background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
@@ -77,7 +62,7 @@ $result = $conn->query($sql);
         }
 
         h3 {
-            color: #00bcd4;
+            color: #000000;
         }
 
         table {
@@ -93,27 +78,16 @@ $result = $conn->query($sql);
         }
 
         th {
-            background-color: #00bcd4;
+            background-color: #1d9485;
             color: white;
         }
 
-        .logout-button {
-            background-color: #f44336;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-
-        .logout-button:hover {
-            background-color: #d32f2f;
-        }
     </style>
 </head>
 <body>
     <header>
         <img src="gambar/LOGO.png" width="200" height="90">
-        <h2>Welcome, User <?php echo $userId; ?></h2>
+        <h1>Welcome, User <?php echo $userId; ?></h1>
         <form method="post">
             <button type="submit" name="logout" class="logout-button">Logout</button>
         </form>
@@ -132,6 +106,7 @@ $result = $conn->query($sql);
                         <th>Status</th>
                     </tr>
                 </thead>
+                <div class="tcolor">
                 <tbody>
                     <?php
                     while ($row = $result->fetch_assoc()) {
@@ -146,6 +121,7 @@ $result = $conn->query($sql);
                     }
                     ?>
                 </tbody>
+                </div>
             </table>
         </section>
     </main>
