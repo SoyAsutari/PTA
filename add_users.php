@@ -138,7 +138,7 @@ function sanitizeInput($data)
             <form method="post">
                 <div class="baris">
                 <div class="nama">
-                <label for="username">Username</label>
+                <label for="username">Name</label>
                 </div>
                 <div class="kotak">
                 <input type="text" id="username" name="username" required>
@@ -147,7 +147,7 @@ function sanitizeInput($data)
 
                 <div class="baris">
                 <div class="nama">
-                <label for="id">ID</label>
+                <label for="id">Ic Number</label>
                 </div>
                 <div class="kotak">
                 <input type="text" id="id" name="id" required>
@@ -204,34 +204,39 @@ function sanitizeInput($data)
                 <label for="type">Type</label>
                 </div>
                 <div class="kotak">
-                <input type="text" id="type" name="type" required>
+                <select id="type" name="type" required>
+                 <option value="CAR">CAR</option>
+                 <option value="MOTORCYCLE">MOTORCYCLE</option>
+                </select>
                 </div>
                 </div>
-
                 <div class="baris">
-                <div class="nama">
+               <div class="nama">
                 <label for="plans">Plans</label>
                 </div>
                 <div class="kotak">
-                <input type="text" id="plans" name="plans" required>
+                <input type="text" id="plans" name="plans" value="YEARLY" readonly>
                 </div>
                 </div>
-
                 <div class="baris">
-                <div class="nama">
-                <label for="expiry_date">Expiry Date</label>
-                </div>
-                <div class="kotak">
-                <input type="date" id="expiry_date" name="expiry_date" required>
-                </div>
-                </div>
+    <div class="nama">
+        <label for="expiry_date">Expiry Date</label>
+    </div>
+    <div class="kotak">
+        <?php
+        // Calculate expiry date as one year from the current date
+        $oneYearLater = date('Y-m-d', strtotime('+1 year'));
+        ?>
+        <input type="date" id="expiry_date" name="expiry_date" value="<?php echo $oneYearLater; ?>" required readonly>
+    </div>
+</div>
 
                 <div class="baris">
                 <div class="nama">
                 <label for="status">Status</label>
                 </div>
                 <div class="kotak">
-                <input type="text" id="status" name="status" value="<?php echo $status; ?>" readonly>
+                <input type="text" id="status" name="status" value="Leave this section"<?php echo $status; ?>" readonly>
                 </div>
                 </div>
 
