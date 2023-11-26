@@ -60,8 +60,8 @@ $conn->close();
     </form>
     
     </header>
-   <main > 
-    <br>
+   <br>
+    <div class="pad">
     <nav> 
         <ul>
         <li><a class="button manage-button" href="admin_1.php">Manage Users</a></li>
@@ -69,10 +69,11 @@ $conn->close();
         <li><a class="button add-button" href="register_admin.php">Register Admin</a></li> 
         </ul>
     </nav>
-    
+    </div>
+        <div class="pad2">
         <section class="insurance-table">
             <center><h2>Insurance Information</h2></center> 
-            <table>
+            <table >
                 <thead>
                     <tr>
                         <th>Insurance ID</th>
@@ -97,9 +98,11 @@ $conn->close();
                     ?>
                 </tbody>
             </table>
+            </div>
         </section>
+
         <br>
-    </main>
+
     <footer>
        
     </footer>

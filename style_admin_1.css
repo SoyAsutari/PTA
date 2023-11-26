@@ -1,16 +1,42 @@
+*{
+  margin :0;
+}
 /* CSS in admin 1*/
 header {
-    background-color: #FFFFFF;
-    color: #000000;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  height: 100px;
+  color: rgb(255, 255, 255);
+  background-color: #00ccff;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+  body {
+    background-image: url(gambar/tile_background.png);
+    background-color: #f5e7e7;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
   }
 
-main {
-  background-color: #E7E7E7;
+.pad {
+  background-color: #ffffffa4;
+  border: 1px solid #ffffff;
+  border-radius: 12px;
 }
+
+.pad2 {
+  border-radius: 32px;
+  border: 1px solid #ffffff;
+  margin-left: 70px;
+  margin-right: 70px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+div.pad2 {
+  background-color: rgba(184, 184, 184, 0.6);
+}
+
 table {
   width: 80%; 
   border-collapse: collapse; 
@@ -20,7 +46,7 @@ table {
 
 /* CSS for table headers */
 table th {
-  background-color: #ff0000; 
+  background-color: #1d9485; 
   color: white; 
   padding: 10px; 
   text-align: left; 
@@ -36,7 +62,9 @@ table td {
 nav ul {
   list-style-type: none;
   padding: 0;
-  margin: 0;
+  margin-left: 70px;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 
 nav ul li {
@@ -47,7 +75,7 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none; 
-  color: #0e1114; 
+  color: #ffffff; 
   font-weight: bold;
 }
 
@@ -62,7 +90,7 @@ footer a {
 .button {
   display: inline-block;
   padding: 10px 20px; 
-  background-color: #202021; 
+  background-color: #1d9485; 
   color: white; 
   text-decoration: none;
   border: none;
@@ -74,21 +102,32 @@ footer a {
 
 /* CSS for button colors (Manage Users, Add Users) */
 .manage-button {
-  background-color: #ff0000;
+  background-color: #1d9485;
 }
 
 .add-button {
-  background-color: #ff0000; 
+  background-color: #1d9485; 
 }
 
 /* CSS for button colors (Logout) */
 .logout-button {
-  background-color: #dc3545; 
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: rgb(255, 0, 0);
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+/* Style for the Logout button on hover */
+.logout-button:hover {
+  background-color: #c40000; 
 }
 /* Style for the delete button */
 .delete-button {
-  background-color: #dc3545; 
-  color: #fff; 
+  background-color: #ff0000; 
+  color: #ffffff; 
   border: none;
   cursor: pointer; 
   text-decoration: none; 
@@ -100,3 +139,6 @@ footer a {
   background-color: #cc0000; 
 }
 
+h1 {
+    color: #000000;
+  }

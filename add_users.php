@@ -101,19 +101,19 @@ function sanitizeInput($data)
             <button type="submit" name="logout" class="button logout-button">Logout</button>
         </form>
     </header>
-    
-    <main>
-        <nav>
-            <!-- Navigation links for managing users and adding users -->
-            <ul>
-                <li><a class="button manage-button" href="admin_1.php">Manage Users</a></li>
-                <li><a class="button add-button" href="add_users.php">Add Users</a></li>
-                <li><a class="button add-button" href="register_admin.php">Register Admin</a></li> 
-            </ul>
-        </nav>
-        <br>
-        <section class="add-user-form">
-            <h2>Add User</h2>
+    <br>
+    <div class="pad">
+    <nav> 
+        <ul>
+        <li><a class="button manage-button" href="admin_1.php">Manage Users</a></li>
+        <li><a class="button add-button" href="add_users.php">Add Users</a></li>
+        <li><a class="button add-button" href="register_admin.php">Register Admin</a></li> 
+        </ul>
+    </nav>
+    </div>
+    <div class="pad2">
+        
+            
             <?php
             // Display validation errors
             if (!empty($errors)) {
@@ -129,39 +129,126 @@ function sanitizeInput($data)
                 echo "<div class='success-box'><p>$message</p></div>";
             }
             ?>
+
+        <section class="add-user-form">    
+            <div class="mainf">
+                <div>
+                    <h2>Add User</h2>
+                </div>
             <form method="post">
+                <div class="baris">
+                <div class="nama">
                 <label for="username">Username</label>
+                </div>
+                <div class="kotak">
                 <input type="text" id="username" name="username" required>
+                </div>
+                </div>
+
+                <div class="baris">
+                <div class="nama">
                 <label for="id">ID</label>
+                </div>
+                <div class="kotak">
                 <input type="text" id="id" name="id" required>
+                </div>
+                </div>
+
+                <div class="baris">
+                <div class="nama">
                 <label for="tel">Phone Number</label>
+                </div>
+                <div class="kotak">
                 <input type="tel" id="tel" name="tel" required>
+                </div>
+                </div>
+
+                <div class="baris">
+                <div class="nama">
                 <label for="email">Email</label>
+                </div>
+                <div class="kotak">
                 <input type="email" id="email" name="email" required>
+                </div>
+                </div>
+
+                <div class="baris">
+                <div class="nama">
                 <label for="address">Address</label>
+                </div>
+                <div class="kotak">
                 <input type="text" id="address" name="address" required>
+                </div>
+                </div>
+
+                <div class="baris">
+                <div class="nama">
                 <label for="model">Model</label>
+                </div>
+                <div class="kotak">
                 <input type="text" id="model" name="model" required>
+                </div>
+                </div>
+
+                <div class="baris">
+                <div class="nama">
                 <label for="plate">Plate</label>
+                </div>
+                <div class="kotak">
                 <input type="text" id="plate" name="plate" required>
+                </div>
+                </div>
+
+                <div class="baris">
+                <div class="nama">
                 <label for="type">Type</label>
+                </div>
+                <div class="kotak">
                 <input type="text" id="type" name="type" required>
+                </div>
+                </div>
+
+                <div class="baris">
+                <div class="nama">
                 <label for="plans">Plans</label>
+                </div>
+                <div class="kotak">
                 <input type="text" id="plans" name="plans" required>
+                </div>
+                </div>
+
+                <div class="baris">
+                <div class="nama">
                 <label for="expiry_date">Expiry Date</label>
+                </div>
+                <div class="kotak">
                 <input type="date" id="expiry_date" name="expiry_date" required>
+                </div>
+                </div>
+
+                <div class="baris">
+                <div class="nama">
                 <label for="status">Status</label>
+                </div>
+                <div class="kotak">
                 <input type="text" id="status" name="status" value="<?php echo $status; ?>" readonly>
+                </div>
+                </div>
+
                 <button type="submit" class="button add-button">Add User</button>
             </form>
-
+            </div>
+            <div></div>
+            <div class="pad3">
+            <div class="karkulator">
             <!-- Calculator -->
             <h2>Calculator</h2>
             <label for="amount">Amount:</label>
             <input type="number" id="amount" name="amount" step="any" placeholder="Enter amount" required>
             <button type="button" onclick="calculate()">Calculate 1%</button>
             <p id="result"></p>
-
+            </div>
+            </div>
             <script>
                 function calculate() {
                     var amount = document.getElementById('amount').value;
@@ -170,6 +257,7 @@ function sanitizeInput($data)
                 }
             </script>
         </section>
+    </div>
     </main>
 </body>
 </html>
