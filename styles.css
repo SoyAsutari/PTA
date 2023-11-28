@@ -25,9 +25,9 @@ body, h1, h2, h3, p, ul, li {
   }
   
   header img {
-    width: 40px;
-    height: 50px;
-    border-radius: 30%;
+    width: 300px;
+    height: 100px;
+    border-radius: 5% 5%;
 
   }
   nav ul {

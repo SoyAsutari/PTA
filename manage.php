@@ -43,29 +43,27 @@ if ($result->num_rows > 0) {
     echo "User not found.";
 }
 
-// Close the database connection
-$conn->close();
-
-// Handle logout
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logout'])) {
-    // stop the session and redirect to the login page
-    session_destroy();
-    header('Location: login_admin.php');
-    exit();
-}
-
 // Delete user logic
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete'])) {
-    $deleteQuery = "DELETE FROM users WHERE insurance_id = $insuranceId";
-    if ($conn->query($deleteQuery) === TRUE) {
+    $deleteQuery = "DELETE FROM users WHERE insurance_id = ?";
+    $stmt = $conn->prepare($deleteQuery);
+    $stmt->bind_param("i", $insuranceId); // 'i' indicates integer
+
+    if ($stmt->execute()) {
         echo '<script>alert("User deleted successfully.");</script>';
         echo '<script>window.location.href = "admin_1.php";</script>';
         exit();
     } else {
-        echo "Error deleting user: " . $conn->error;
+        echo "Error deleting user: " . $stmt->error;
     }
+
+    $stmt->close(); // Close the prepared statement
 }
+
+// Close the database connection
+$conn->close();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -88,7 +86,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete'])) {
             <h2 class="merah">User Details</h2>
             <?php if (isset($userData)) { ?>
                 <table class="user-table">
-
                     <tr>
                         <th>Insurance ID</th>
                         <td><?php echo $userData['insurance_id']; ?></td>
@@ -118,50 +115,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete'])) {
                             <?php echo $userData['status']; ?>
                         </td>
                     </tr>
-                    
                 </table>
                 <br>
-                <form method="post" onsubmit="return confirm('Are you sure you want to delete this user?');">
-                    <button type="submit" name="delete" class="delete-button">Delete User</button>
-                </form>
+                <section class="lol">
+                    <a href="admin_1.php" class="return-button">Return</a>
+                    <form method="post" onsubmit="return confirm('Are you sure you want to delete this user?');">
+                        <button class="delete-button" type="submit" name="delete">Delete User</button>
+                    </form>
+                </section>
             <?php } ?>
-        </section>
-        <section class="insurance-details">
-            <br>
-            <a href="admin_1.php" class="return-button">Return</a>
         </section>
     </main>
     <style>
-        /* Style for the Return button */
-        .return-button {
-            background-color: #FF0000;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        /* Style for the Return button on hover */
-        .return-button:hover {
-            background-color: #BCBCBC;
-        }
-
-        /* Style for the Delete button */
-        .delete-button {
-            background-color: #FF0000;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
-
-        /* Style for the Delete button on hover */
-        .delete-button:hover {
-            background-color: #BCBCBC;
-        }
+        /* Your styles go here */
     </style>
-
     <script>
         function confirmDelete() {
             return confirm("Are you sure you want to delete this user?"); // Display a confirmation dialog

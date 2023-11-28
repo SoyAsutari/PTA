@@ -23,6 +23,13 @@ header {
   align-items: center;
 }
 
+header img {
+  width: 300px;
+  height: 100px;
+  border-radius: 5% 5%;
+
+}
+
 /* Style the h1 in the header */
 h1 {
   color: #000000;
