@@ -110,8 +110,8 @@ $conn->close();
     <header>
         <img src="gambar/LOGO.png" width="200" height="90">
         <h1>Welcome, Admin <?php echo $adminUsername; ?>!</h1>
-        <form method="post">
-            <button type="submit" name="logout" class="button logout-button">Logout</button>
+        <form method="post" onsubmit="return confirm('Are you sure you want to logout?');">
+            <button type="submit" name="logout" class="button logout-button" >Logout</button>
         </form>
     </header>
     <br>

@@ -88,7 +88,7 @@ $result = $conn->query($sql);
     <header>
         <img  src="gambar/LOGO.png" >
         <h1>Welcome, User <?php echo $userId; ?></h1>
-        <form method="post">
+        <form method="post" onsubmit="return confirm('Are you sure you want to logout?');">
             <button type="submit" name="logout" class="logout-button">Logout</button>
         </form>
     </header>

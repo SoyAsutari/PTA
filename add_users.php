@@ -97,7 +97,7 @@ function sanitizeInput($data)
     <header>
         <img src="gambar/LOGO.png" width="200" height="90">
         <h1>Welcome, <?php echo $adminUsername; ?>!</h1> <!-- Display the admin's username -->
-        <form method="post">
+        <form method="post" onsubmit="return confirm('Are you sure you want to logout?');">
             <button type="submit" name="logout" class="button logout-button">Logout</button>
         </form>
     </header>

@@ -43,27 +43,51 @@ if ($result->num_rows > 0) {
     echo "User not found.";
 }
 
+// for logout
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logout'])) {
+    session_destroy();
+    header('Location: login_admin.php');
+    exit();
+}
+
+
+// Renew user logic
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['renew'])) {
+    $renewQuery = "UPDATE users SET expiry_date = DATE_ADD(expiry_date, INTERVAL 1 YEAR) WHERE insurance_id = ?";
+    $stmtRenew = $conn->prepare($renewQuery);
+    $stmtRenew->bind_param("i", $insuranceId); 
+
+    if ($stmtRenew->execute()) {
+        echo '<script>alert("Insurance renewed successfully.");</script>';
+        echo '<script>window.location.href = "manage.php?id=' . $insuranceId . '";</script>';
+        exit();
+    } else {
+        echo "Error renewing insurance: " . $stmtRenew->error;
+    }
+
+    $stmtRenew->close();
+}
+
 // Delete user logic
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete'])) {
     $deleteQuery = "DELETE FROM users WHERE insurance_id = ?";
-    $stmt = $conn->prepare($deleteQuery);
-    $stmt->bind_param("i", $insuranceId); // 'i' indicates integer
+    $stmtDelete = $conn->prepare($deleteQuery);
+    $stmtDelete->bind_param("i", $insuranceId); // 'i' for integer
 
-    if ($stmt->execute()) {
+    if ($stmtDelete->execute()) {
         echo '<script>alert("User deleted successfully.");</script>';
         echo '<script>window.location.href = "admin_1.php";</script>';
         exit();
     } else {
-        echo "Error deleting user: " . $stmt->error;
+        echo "Error deleting user: " . $stmtDelete->error;
     }
 
-    $stmt->close(); // Close the prepared statement
+    $stmtDelete->close();
 }
 
-// Close the database connection
+
 $conn->close();
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -77,8 +101,8 @@ $conn->close();
     <header>
         <img src="gambar/LOGO.png" width="200" height="90">
         <h1>Welcome, Admin <?php echo $adminUsername; ?>!</h1>
-        <form method="post">
-            <button type="submit" name="logout" class="logout-button">Logout</button>
+        <form method="post" onsubmit="return confirm('Are you sure you want to logout?');">
+            <button type="submit" name="logout" class="button logout-button">Logout</button>
         </form>
     </header>
     <main>
@@ -86,7 +110,7 @@ $conn->close();
             <h2 class="merah">User Details</h2>
             <?php if (isset($userData)) { ?>
                 <table class="user-table">
-                    <tr>
+                <tr>
                         <th>Insurance ID</th>
                         <td><?php echo $userData['insurance_id']; ?></td>
                     </tr>
@@ -102,7 +126,8 @@ $conn->close();
                         <th>Owner</th>
                         <td><?php echo $userData['username']; ?></td>
                     </tr>
-                    <th>Type Of Insurance</th>
+                    <tr>
+                        <th>Type Of Insurance</th>
                         <td><?php echo $userData['type']; ?></td>
                     </tr>
                     <tr>
@@ -118,21 +143,16 @@ $conn->close();
                 </table>
                 <br>
                 <section class="lol">
-                <a href="admin_1.php" class="return-button">Return</a>
-                <form method="post" onsubmit="return confirm('Are you sure you want to delete this user?');">
-                    <button type="submit" name="delete" class="delete-button">Delete User</button>
-                </form>
-            </section>
+                    <a href="admin_1.php" class="return-button">Return</a>
+                    <form method="post" onsubmit="return confirm('Are you sure you want to renew this insurance?');">
+                        <button type="submit" name="renew" class="renew-button">Renew</button>
+                    </form>
+                    <form method="post" onsubmit="return confirm('Are you sure you want to delete this user?');">
+                        <button type="submit" name="delete" class="delete-button">Delete User</button>
+                    </form>
+                </section>
             <?php } ?>
         </section>
-        
-        
     </main>
-  
-    <script>
-        function confirmDelete() {
-            return confirm("Are you sure you want to delete this user?"); // Display a confirmation dialog
-        }
-    </script>
 </body>
 </html>
