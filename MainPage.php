@@ -9,7 +9,7 @@
 </head>
 <body>
 <header>
-  <img src="gambar/LOGO1.png" width="200" height="90">
+  <img  src="gambar/LOGO.png">
   <nav>
     <ul>
       <li><a href="MainPage.php" class="btn"> Home</a></li>

@@ -52,7 +52,6 @@ $conn->close();
         <label for="id">ID</label>
         <input type="text" id="id" name="id" placeholder="Enter your ID" required>
         <button type="submit" class="btn">Login</button>
-        <br>
         <div class="return-button-container">
             <a href="login_admin.php" class="return-link">Admin Login Here</a>
             <a href="MainPage.php" class="return-link">Return to Main Page</a>

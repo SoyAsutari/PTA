@@ -121,48 +121,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete'])) {
                     
                 </table>
                 <br>
-                <form method="post" onsubmit="return confirm('Are you sure you want to delete this user?');">
-                    <button type="submit" name="delete" class="delete-button">Delete User</button>
-                </form>
+                <section class="lol">
+                    <a href="admin_1.php" class="return-button">Return</a>
+                    <form method="post" onsubmit="return confirm('Are you sure you want to delete this user?'); ">
+                    <button class="delete-button"  type="submit" name="delete" >Delete User</button>
+                    </form>
+                </section>
+                
             <?php } ?>
         </section>
-        <section class="insurance-details">
-            <br>
-            <a href="admin_1.php" class="return-button">Return</a>
-        </section>
+        
     </main>
     <style>
-        /* Style for the Return button */
-        .return-button {
-            background-color: #FF0000;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        /* Style for the Return button on hover */
-        .return-button:hover {
-            background-color: #BCBCBC;
-        }
-
-        /* Style for the Delete button */
-        .delete-button {
-            background-color: #FF0000;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
-
-        /* Style for the Delete button on hover */
-        .delete-button:hover {
-            background-color: #BCBCBC;
-        }
-    </style>
-
-    <script>
         function confirmDelete() {
             return confirm("Are you sure you want to delete this user?"); // Display a confirmation dialog
         }

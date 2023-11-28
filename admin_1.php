@@ -146,7 +146,7 @@ $conn->close();
                         echo "<td>" . $row['username'] . "</td>";
                         echo "<td>" . $row['tel'] . "</td>";
                         echo "<td style='color: " . ($row['status'] == 'EXPIRED' ? 'red' : 'green') . "'>" . $row['status'] . "</td>";
-                        echo "<td><a href='manage.php?id=" . $row['insurance_id'] . "' class='manage-button'>Manage</a></td>";
+                        echo "<td><a href='manage.php?id=" . $row['insurance_id'] . "' class='buton'>Manage</a></td>";
                         echo "</tr>";
                     }
                     ?>

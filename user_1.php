@@ -86,7 +86,7 @@ $result = $conn->query($sql);
 </head>
 <body>
     <header>
-        <img src="gambar/LOGO.png" width="200" height="90">
+        <img  src="gambar/LOGO.png" >
         <h1>Welcome, User <?php echo $userId; ?></h1>
         <form method="post">
             <button type="submit" name="logout" class="logout-button">Logout</button>

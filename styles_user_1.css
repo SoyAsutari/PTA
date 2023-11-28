@@ -30,6 +30,13 @@
     align-items: center;
   }
 
+  header img {
+    width: 300px;
+    height: 100px;
+    border-radius: 5% 5%;
+
+  }
+
   main {
     padding: 20px;
     background-color: #7e7e7e8a;
