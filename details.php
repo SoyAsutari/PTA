@@ -110,21 +110,6 @@ $conn->close();
             <a href="user_1.php" class="return-button">Return</a>
         </section>
     </main>
-    <style>
-        /* Style for the Return button */
-        .return-button {
-            background-color: #FF0000;
-            color: white; 
-            border: none; 
-            padding: 5px 10px; 
-            cursor: pointer; 
-            text-decoration: none; 
-        }
 
-        /* Style for the Return button on hover */
-        .return-button:hover {
-            background-color: #BCBCBC; 
-        }
-    </style>
 </body>
 </html>

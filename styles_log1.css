@@ -21,7 +21,7 @@ body {
     font-family: Arial, sans-serif;
     background-image: url(gambar/bglogin.png);
     background-repeat: no-repeat;
-    background-size: 2000px 1200px;
+    background-size: cover;
     background-position: center top;
     background-color: green;
     margin: 0;

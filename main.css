@@ -16,6 +16,7 @@ body, h1, h2, h3, p, ul, li {
 
   header {
     height: 100px;
+    width: 100%;
     color: rgb(255, 255, 255);
     background-color: #00ccff;
     padding: 1rem;
@@ -30,6 +31,7 @@ body, h1, h2, h3, p, ul, li {
     border-radius: 5% 5%;
 
   }
+
   nav ul {
     list-style: none;
     display: flex;
@@ -54,7 +56,7 @@ body, h1, h2, h3, p, ul, li {
   }
 
   .main-content {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 2rem auto;
     padding: 0 2rem;
   }
@@ -67,68 +69,78 @@ body, h1, h2, h3, p, ul, li {
   }
 
   .intro1 {
+    height: 500px;
     display: block;
     align-items: center; 
     column-gap: 5px;
     text-align: center;
     background-image: url("gambar/bg3.png");
     background-position: center top;
-    background-size: 100% 450px;
+    background-size: 2000px 500px;
     background-repeat: no-repeat;
-    background-color: ##00ccff;
+    background-color: #00ccff;
  
   }
+
+
+
   .intro2 {
-    position: relative;
-    top: 30px;
     border-radius: 32px;
     padding-left: 70px;
     padding-right: 70px;
     padding-top: 20px;
-    text-align: justify;
+    padding-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 250px;
+    text-align: left;
     width: 1000px;
-    height: 300px;
+    height: 200px;
   }
 
   div.intro2 {
     background-color: rgba(135, 260, 250, 0.6);
   }
 
-  .intro3 {
-    width: 400px;
+  .intro2 img {
+    width: 200px;
     height: 200px;
-  
-  }
-
-  .intro3 img {
-    position: relative;
-    left: 1000px;
-    bottom: 200px;
-    width: 800px;
-    height: 398px;
     object-fit: contain;
+    float: right;
+    margin-bottom: 20px;
+    margin-left: 400px;
 
   }
-  
+
+.lol{
+    text-align: left;
+    background-color: #00ccff;
+    max-width: 2000px ;
+    padding: 2.5rem;
+    border: 6px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1)
+  }
   .featured-policies {
     display: flex;
     justify-content: space-between;
   }
   
   .policy {
-    background-color: #f7f7f7;
+    background-color: #00ccff;
     flex-basis: calc(33.33% - 2rem);
     padding: 2.5rem;
-    border: 6px solid #00ccff;
+    border: 6px solid #ddd;
     border-radius: 5px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   .contact {
     text-align: left;
-    background-color: #f7f7f7;
+    background-color: #00ccff;
+    max-width: 2000px ;
     padding: 2.5rem;
-    border: 6px solid #00ccff;
+    border: 6px solid #ddd;
     border-radius: 5px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 
@@ -181,224 +193,127 @@ body, h1, h2, h3, p, ul, li {
   }
 
   .agent {
-    background-color: #f7f7f7;
+    width: 300px;
+    background-color: #00ccff;
     flex-basis: calc(33.33% - 2rem);
     padding: 2.5rem;
-    border: 6px solid #00ccff;
+    border: 6px solid #ddd;
     border-radius: 5px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     margin: 0 70px 0 70px;
   }
 
-  .user-manual {
-    display: block;
-    margin-left: 60px;
-    margin-right: 60px;
-    align-items: center; 
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 5px;
-    text-align: center;
-    background-position: center top;
-    background-size: 2000px 500px;
-    background-repeat: no-repeat;
-    background-color: #00ccff;
- 
-  }
-
-  .manual {
-    height: 660px;
-    background-color: #f7f7f7;
-    border: 6px solid #00ccff;
-    border-radius: 5px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  }
-
-  .user-manual img {
-    width: 100%;
-    height: 660px;
-  }
-
-  .whatapp {
-    list-style: none;
-  }
-  @media (max-width: 430px) {
-  
-    body {
-      background-image: url(gambar/tile_background.png);
-      background-color: #f5e7e7;
-      font-size: 12px;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-    }
+  @media (max-width: 400px ){
+    
     header {
       height: 70px;
+      width: 400px;
       color: rgb(255, 255, 255);
       background-color: #00ccff;
-      padding: 10px;
       display: block;
-      justify-content: space-between;
       align-items: center;
     }
-    
+
     header img {
       width: 100px;
       height: 50px;
       border-radius: 5% 5%;
   
     }
+
     nav ul {
-      
       list-style: none;
-      display: flex;
-    }
-    
-    nav li {
-      margin-right: 10px;
-    }
-    
-    nav a {
-      color: white;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    
-    nav a:hover {
-      bcolor: #ddd;
-    }
-  
-    div {
-      bcolor: #4000;
-    }
-  
-    .btn {
       font-size: 10px;
-      display: inline-block;
-      padding: 5px 10px;
-      background-color: #1d9485;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s;
     }
-    
-    .btn:hover {
-      background-color: #555;
+  
+    nav li {
+      margin-right: 5px;
     }
 
     .intro1 {
+      height: 400px;
       display: block;
       align-items: center; 
       column-gap: 5px;
       text-align: center;
       background-image: url("gambar/bg3.png");
       background-position: center top;
-      background-size: 100% 350px;
-      background-repeat: no-repeat;
-      background-color: ##00ccff;
-   
-    }
-
-    .intro2 {
-      position: relative;
-      top: 10px;
-      border-radius: 25px;
-      padding-left: 10px;
-      padding-right: 10px;
-      padding-top: 5px;
-      text-align: justify;
-      margin-left: 10px;
-      margin-right: 10px;
-      width: 320px;
-      height: 200px;
-    }
-
-    .intro2 h2 {
-      font-size: 12px;
-    }
-
-    .intro2 h4 {
-      font-size: 10px;
-    }
-  
-    div.intro2 {
-      background-color: rgba(135, 260, 250, 0.6);
-    }
-  
-    .intro3 {
-      width: 400px;
-      height: 60px;
-    
-    }
-  
-    .intro3 img {
-      position: relative;
-      left: 100px;
-      bottom: 40px;
-      width: 200px;
-      height: 120px;
-      object-fit: contain;
-  
-    }
-
-    .user-manual {
-      display: block;
-      margin-left: 5px;
-      margin-right: 5px;
-      align-items: center; 
-      column-gap: 5px;
-      text-align: center;
-      background-position: center top;
       background-size: 2000px 500px;
       background-repeat: no-repeat;
-      background-color: ##00ccff;
+      background-color: #00ccff;
    
     }
   
-    .manual {
-      height: 260px;
-      border-radius: 5px;
-      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
+    .intro2 {
+      display: block;
+      font-size: 12px;
+      border-radius: 32px;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 20px;
+      margin-top: 20px;
+      margin-left: 10px;
+      text-align: justify;
+      width: 320px;
+      height: 300px;
     }
+
   
-    .user-manual img {
-      width: 100%;
-      height: 260px;
+    .intro2 img {
+      width: 200px;
+      height: 200px;
+      object-fit: contain;
+      float: right;
+      margin-bottom: 20px;
+      margin-left: 400px;
+  
     }
+
 
     .featured-agent {
       display: block;
-      align-content:space-around;
-      margin: 0 10px 0 10px;
+      justify-content: space-between;
+      margin: 0 70px 0 70px;
     }
   
     .agent {
-      width: 260px;
-      padding: 5px;
-      border-radius: 5px;
+      font-size: 12px;
+      width: 200px;
+      background-color: #00ccff;
+      flex-basis: calc(33.33% - 2rem);
+      padding: 10px;
       box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-      margin: 0 10px 10px 10px;
-      text-align: center;
+      margin: 0 
     }
 
     .agent img {
-      width: 100%;
+      width: 200px;
       height: 150px;
+      object-fit: contain;
     }
 
     .featured-policies {
       display: block;
       justify-content: space-between;
+      max-width: 400px;
     }
     
     .policy {
-      background-color: #f7f7f7;
+      font-size: 12px;
+      background-color: #00ccff;
       flex-basis: calc(33.33% - 2rem);
       padding: 10px;
-      border: 6px solid #00ccff;
+      border: 6px solid #ddd;
       border-radius: 5px;
       box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     }
+
+    .policy img{
+      width: 200px;
+      height: 150px;
+      object-fit: contain;
+    }
   
 
-    
   }

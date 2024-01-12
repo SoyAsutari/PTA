@@ -5,11 +5,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Insurance System</title>
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="main.css">
 </head>
 <body>
 <header>
-  <img  src="gambar/LOGO.png">
+  <a href="MainPage.php" >
+  <img  src="gambar/LOGO.png" >
+  </a>
   <nav>
     <ul>
       <li><a href="#1" class="btn">Manual</a></li>
@@ -34,66 +37,62 @@
   </section>
   <br>
   <section class="intro1" >
-    <center>
     <div class="intro2">
-    <p><h2>Selamat datang ke (Nama Syarikat) Insurans Kenderaan, di mana keselamatan, keselesaan, dan kepuasan anda dalam setiap perjalanan menjadi keutamaan kami.</h2></p>
-    <p><h4>Terima kasih kerana memilih (Nama Syarikat) Insurans Kenderaan sebagai rakan perjalanan anda. Hubungi kami hari ini untuk mendapatkan penyelesaian insurans yang sesuai untuk melindungi kenderaan anda dan memberikan perlindungan maksimum pada setiap perjalanan anda.</h4></p>
-    </div>
-  </center>
-    <div class="intro3">
-      <img src="gambar/car1.png">
+    <p><h3>Selamat datang ke (Nama Syarikat) Insurans Kenderaan, di mana keselamatan, keselesaan, dan kepuasan anda dalam setiap perjalanan menjadi keutamaan kami.</h3></p>
+    <p><h4>Terima kasih kerana memilih (Nama Syarikat) Insurans Kenderaan sebagai rakan perjalanan anda. Hubungi kami hari ini untuk mendapatkan penyelesaian insurans yang sesuai untuk melindungi kenderaan anda dan memberikan perlindungan maksimum pada setiap perjalanan anda.</4></p>  
     </div>
   </section>
   <br>
-    <center id="1"><h2 >Manual Pengguna</h2></center>
-  <section class="user-manual" >
-    <div class="manual">
-      <center>
-  <img src="gambar/manual.png">
-   </center>
-   </div>
+  <br>
+<center><h2 id="3">Featured Policies</h2></center>
+  <section class="lol" >
+    <div class="">
+      <center><img src="gambar/policy1.png"></center>
+      <h3>Comprehensive insurance</h3>
+      <p>Protect your vehicle with our comprehensive auto insurance plans,it cover:</p>
+      <p>1.Death or injury to other parties</p>
+      <p>2.Damage to other parties property</p>
+      <p>3.Loss/damage to your vehicle caused by theft or fire</p>
+      <p>4.Damage to your vehicle due to accident</p>
+    </div>
   </section>
+<br>
   <br>
     <center id="2"><h2 id="2">Ejen Kami</h2></center>
-    <center>
   <section class="featured-agent" >
+    
     <div class="agent">
       <center><img src="gambar/profileagent.png"></center>
-      <center>
-        <h3>Syauki</h3>
-        <ul class="whatapp" >
-        <li><a href="#https://wa.me/0197837854" class="btn">Hubungi saya</a></li>
-       </ul>
-    </center>
+      <center><h3>Syauki</h3></center>
+      <center><a href="https://wa.me/60197837854" class="btn">Hubungi saya</a></center>
       <p>"Sukses dalam jual beli bukan hanya tentang menjual produk, tetapi juga tentang membangun hubungan.</p>
       <p>Jadilah agen yang memahami kebutuhan pelanggan dan memberikan solusi terbaik untuk mereka."</p>
+      <div>
+    </div>
     </div>
     <div class="agent">
       <center><img src="gambar/profileagent.png"></center>
-      <center>
-        <h3>Tupai</h3>
-      <ul class="whatapp" >
-        <li><a href="#https://wa.me/0197837854" class="btn">Hubungi saya</a></li>
-       </ul>
-      </center>
+      <center><h3>Tupai</h3></center>
+      <center><a href="https://wa.me/60197837854" class="btn">Hubungi saya</a></center>
       <p>"Kepercayaan adalah mata uang bisnis yang paling berharga.</p>
       <p>Sebagai agen, jaga kepercayaan pelanggan Anda, dan kesuksesan akan mengikuti."</p>
+      <div>
+      
+    </div>
     </div>
     <div class="agent">
       <center><img src="gambar/profileagent.png"></center>
-      <center>
-        <h3>Icap</h3>
-      <ul class="whatapp" >
-        <li><a href="#https://wa.me/0197837854" class="btn">Hubungi saya</a></li>
-       </ul>
-      </center>
+      <center><h3>Icap</h3></center>
+      <center><a href="https://wa.me/60197837854" class="btn">Hubungi saya</a></center>
       <p>"Kualitas terbaik tidak pernah berbohong pelanggan tidak pernah lupa. </p>
       <p>Misi agen adalah memberikan layanan terbaik dalam setiap transaksi"</p>
+      <div>
+      
+    </div>
     </div>
   
   <br>
   </section>
-</center>
   <br>
 <center><h2 id="3">Featured Policies</h2></center>
   <section class="featured-policies" >

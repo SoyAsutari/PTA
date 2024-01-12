@@ -131,10 +131,12 @@ function sanitizeInput($data)
             ?>
 
         <section class="add-user-form">    
+            
             <div class="mainf">
                 <div>
                     <h2>Add User</h2>
                 </div>
+                
             <form method="post">
                 <div class="baris">
                 <div class="nama">
@@ -222,6 +224,7 @@ function sanitizeInput($data)
     <div class="nama">
         <label for="expiry_date">Expiry Date</label>
     </div>
+       
     <div class="kotak">
         <?php
         // Calculate expiry date as one year from the current date
@@ -261,6 +264,7 @@ function sanitizeInput($data)
                     document.getElementById('result').innerText = "1% of the amount is: " + result;
                 }
             </script>
+           
         </section>
     </div>
     </main>
