@@ -55,7 +55,7 @@ nav ul li a {
 .button {
     display: inline-block;
     padding: 10px 20px; 
-    background-color: #1d9485; 
+    background-color: #0012b4; 
     color: white; 
     text-decoration: none;
     border: none;
@@ -116,7 +116,7 @@ button.register-button {
     display: block;
     width: 100%;
     padding: 10px;
-    background-color: #1d9485;
+    background-color: #0012b4;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -130,7 +130,7 @@ button.register-button:hover {
 .button {
   display: inline-block;
   padding: 10px 20px; 
-  background-color: #1d9485; 
+  background-color: #0012b4; 
   color: white; 
   text-decoration: none;
   border: none;
@@ -231,7 +231,7 @@ button.register-button:hover {
   .button {
     display: inline-block;
     padding: 5px 10px; 
-    background-color: #1d9485; 
+    background-color: #0012b4; 
     color: white; 
     font-size: 10px;
     text-decoration: none;
@@ -244,7 +244,7 @@ button.register-button:hover {
   .buton {
     display: inline-block;
     padding: 10px 20px; 
-    background-color: #1d9485; 
+    background-color: #0012b4; 
     color: white; 
     text-decoration: none;
     border: none;
@@ -257,7 +257,7 @@ button.register-button:hover {
     font-size: 10px;
     display: inline-block;
     padding: 5px 10px;
-    background-color: #1d9485;
+    background-color: #0012b4;
     color: white;
     text-decoration: none;
     border-radius: 5px;

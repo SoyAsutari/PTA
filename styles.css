@@ -137,7 +137,7 @@ body, h1, h2, h3, p, ul, li {
   .btn {
     display: inline-block;
     padding: 0.5rem 1rem;
-    background-color: #1d9485;
+    background-color: #0012b4;
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -183,11 +183,11 @@ body, h1, h2, h3, p, ul, li {
   .agent {
     background-color: #f7f7f7;
     flex-basis: calc(33.33% - 2rem);
-    padding: 2.5rem;
+    padding: 5px;
     border: 6px solid #00ccff;
     border-radius: 5px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 0 70px 0 70px;
+    margin: 0 90px 0 90px;
   }
 
   .user-manual {
@@ -274,7 +274,7 @@ body, h1, h2, h3, p, ul, li {
       font-size: 10px;
       display: inline-block;
       padding: 5px 10px;
-      background-color: #1d9485;
+      background-color: #0012b4;
       color: white;
       text-decoration: none;
       border-radius: 5px;

@@ -13,9 +13,8 @@
   <nav>
     <ul>
       <li><a href="#1" class="btn">Manual</a></li>
-      <li><a href="#2" class="btn">Ejen</a></li>
-      <li><a href="#3" class="btn">Policies</a></li>
-      <li><a href="#4" class="btn">Contact</a></li>
+      <li><a href="#2" class="btn">Agent</a></li>
+      <li><a href="#3" class="btn">Package</a></li>
       <li><a href="login_cust.php" class="btn">Login</a></li>
     </ul>
   </nav>
@@ -36,8 +35,8 @@
   <section class="intro1" >
     <center>
     <div class="intro2">
-    <p><h2>Selamat datang ke (Nama Syarikat) Insurans Kenderaan, di mana keselamatan, keselesaan, dan kepuasan anda dalam setiap perjalanan menjadi keutamaan kami.</h2></p>
-    <p><h4>Terima kasih kerana memilih (Nama Syarikat) Insurans Kenderaan sebagai rakan perjalanan anda. Hubungi kami hari ini untuk mendapatkan penyelesaian insurans yang sesuai untuk melindungi kenderaan anda dan memberikan perlindungan maksimum pada setiap perjalanan anda.</h4></p>
+    <p><h2>"Welcome to (Company Name) Vehicle Insurance, where your safety, comfort, and satisfaction in every journey are our priorities."</h2></p>
+    <p><h4>Thank you for choosing (Company Name) Vehicle Insurance as your travel companion. Contact us today to get the right insurance solution to protect your vehicle and provide maximum coverage for every journey</h4></p>
     </div>
   </center>
     <div class="intro3">
@@ -54,48 +53,48 @@
    </div>
   </section>
   <br>
-    <center id="2"><h2 id="2">Ejen Kami</h2></center>
+    <center id="2"><h2 id="2">Agent KVKS</h2></center>
     <center>
   <section class="featured-agent" >
     <div class="agent">
-      <center><img src="gambar/profileagent.png"></center>
+      <center><img src="gambar/Syauqi.png"></center>
       <center>
-        <h3>Syauki</h3>
+        <h3>Mohamad Syauqi Afifi </h3>
         <ul class="whatapp" >
-        <li><a href="#https://wa.me/0197837854" class="btn">Hubungi saya</a></li>
+        <li><a href="https://wa.me/60109004173?text=Insurance%20KVKS-agent%20Mohamad%20Syauqi%20Afifi%0AName:%0AIC%20Number:%0APhone%20Number:%0AAddress:%0AModel:%0APlate:%0AType:" target="_blank" class="btn">Contact me</a></li>
        </ul>
     </center>
-      <p>"Sukses dalam jual beli bukan hanya tentang menjual produk, tetapi juga tentang membangun hubungan.</p>
-      <p>Jadilah agen yang memahami kebutuhan pelanggan dan memberikan solusi terbaik untuk mereka."</p>
+      <p>"Keselamatan anda keutamaan kami."</p>
+      <p></p>
     </div>
     <div class="agent">
-      <center><img src="gambar/profileagent.png"></center>
+      <center><img src="gambar/tupai.png"></center>
       <center>
-        <h3>Tupai</h3>
+        <h3>Adam Mukhriz</h3>
       <ul class="whatapp" >
-        <li><a href="#https://wa.me/0197837854" class="btn">Hubungi saya</a></li>
+        <li><a href="https://wa.me/60182167045?text=Insurance%20KVKS-agent%20Adam%20Mukhriz%0AName:%0AIC%20Number:%0APhone%20Number:%0AAddress:%0AModel:%0APlate:%0AType:" target="_blank" class="btn">Contact me</a></li>
        </ul>
       </center>
-      <p>"Kepercayaan adalah mata uang bisnis yang paling berharga.</p>
-      <p>Sebagai agen, jaga kepercayaan pelanggan Anda, dan kesuksesan akan mengikuti."</p>
+      <p>"Sesal dulu pendapatan sesal kemudian tiada guna."</p>
+      <p></p>
     </div>
     <div class="agent">
-      <center><img src="gambar/profileagent.png"></center>
+      <center><img src="gambar/icap.png"></center>
       <center>
-        <h3>Icap</h3>
+        <h3>Adam Isyraf</h3>
       <ul class="whatapp" >
-        <li><a href="#https://wa.me/0197837854" class="btn">Hubungi saya</a></li>
+        <li><a href="https://wa.me/60103826292?text=Insurance%20KVKS-agent%20Adam%20Isyraf%0AName:%0AIC%20Number:%0APhone%20Number:%0AAddress:%0AModel:%0APlate:%0AType:" target="_blank" class="btn">Contact me</a></li>
        </ul>
       </center>
-      <p>"Kualitas terbaik tidak pernah berbohong pelanggan tidak pernah lupa. </p>
-      <p>Misi agen adalah memberikan layanan terbaik dalam setiap transaksi"</p>
+      <p>"Belilah insurans sekarang." </p>
+      <p></p>
     </div>
   
   <br>
   </section>
 </center>
   <br>
-<center><h2 id="3">Featured Policies</h2></center>
+<center><h2 id="3">Featured Package</h2></center>
   <section class="featured-policies" >
     <div class="policy">
       <center><img src="gambar/policy1.png"></center>
@@ -124,22 +123,13 @@
   </section>
 <br>
 </section>
-  <center><h2 id="4">Contact Us</h2>
-  <section class="contact" >
-    <div >
-      <p><h3>Addres:</h3></p>
-      <p> Jalan 14, Desa Jaya Kepong, Kuala Lumpur, 52100, Kuala Lumpur, WP Kuala Lumpur</p>
-      <p><h3>Email:</h3></p>
-      <p>InsurantKVKS@gmail.com</p>
-      <p><h3>instagram:</h3></p>
-      <p>@KVKS_car</p>
-    </div>
-  </section>
-
-  <br>
+ 
  
 <footer>
   <p>&copy; 2023 Insurance System. All rights reserved.</p>
+  <p>Addres: Kolej Vokasional Kuala Selangor 45600 Bestari Jaya Selangor Darul Ehsan</p>
+  <p>Email: InsurantKVKS@gmail.com</p>
+  <p>instagram: @KVKS_car</p>
 </footer>
 <script src="script_main.js"></script>
 </body>

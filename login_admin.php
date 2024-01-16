@@ -42,7 +42,7 @@ $conn->close();
 <body>
 <div class="login-container">
     <form class="login-form" action="" method="POST">
-        <h2>Login Admins</h2>
+        <h2>Admin login</h2>
         <?php if (isset($_GET['error']) && $_GET['error'] === 'invalid') { ?>
             <p style="color: red;" class="error-message"> Please try again.</p>
         <?php } ?>

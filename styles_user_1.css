@@ -73,12 +73,13 @@ th, td {
 }
 
 th {
-    background-color: #1d9485;
+    background-color: #0012b4;
     color: white;
 }
   
  /* Style for the Logout button */
  .logout-button {
+  font: 16px sans-serif;
   display: inline-block;
   padding: 0.5rem 1rem;
   background-color: rgb(255, 0, 0);
@@ -152,7 +153,7 @@ th {
     font-size: 10px;
     display: inline-block;
     padding: 5px 10px;
-    background-color: #1d9485;
+    background-color: #0012b4;
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -216,7 +217,7 @@ th, td {
 }
 
 th {
-    background-color: #1d9485;
+    background-color: #0012b4;
     color: white;
 }
 

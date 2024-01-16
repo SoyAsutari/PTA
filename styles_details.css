@@ -69,7 +69,7 @@ h1 {
 }
 
 .user-table th {
-    background-color: #1d9485;
+    background-color: #0012b4;
     color: #ffffff;
 }
 
@@ -129,7 +129,7 @@ button {
   height: 22px;
   display: inline-block;
   padding: 5px 10px 10px 10px; 
-  background-color: #1d9485; 
+  background-color: #0012b4; 
   color: white; 
   text-decoration: none;
   border: none;
@@ -147,7 +147,7 @@ button {
 .renew-button {
   display: inline-block;
   padding: 10px 10px;
-  background-color: #1d9485;
+  background-color: #0012b4;
   color: rgb(255, 255, 255);
   text-decoration: none;
   border-radius: 5px;
@@ -272,7 +272,7 @@ button {
       height: 17px;
       display: inline-block;
       padding: 5px 10px; 
-      background-color: #1d9485; 
+      background-color: #0012b4; 
       color: white; 
       text-decoration: none;
       border: none;
@@ -286,7 +286,7 @@ button {
       font-size: 10px;
       display: inline-block;
       padding: 5px 10px;
-      background-color: #1d9485;
+      background-color: #0012b4;
       color: rgb(255, 255, 255);
       text-decoration: none;
       border-radius: 5px;
