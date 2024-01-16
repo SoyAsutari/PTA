@@ -25,6 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logout'])) {
 }
 
 $adminUsername = $_SESSION['username'];
+$adminType = $_SESSION['admin_type']; // Add this line to get the admin_type
 
 // Database connection details
 $servername = "localhost";
@@ -66,8 +67,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Validate input fields (you can add more specific validation as needed)
     if (empty($username) || empty($id) || empty($tel) || empty($email) || empty($address) || empty($model) || empty($plate) || empty($type)) {
         $errors[] = "All fields are required.";
-    
+    }
 
+    // If there are no validation errors, insert the user into the database
+    if (empty($errors)) {
+        // SQL query to insert the user into the database
+        $insertQuery = "INSERT INTO users (username, id, tel, email, address, model, plate, type, plans, expiry_date, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $stmt = $conn->prepare($insertQuery);
+        $stmt->bind_param("sssssssssss", $username, $id, $tel, $email, $address, $model, $plate, $type, $plans, $expiry_date, $status);
+
+        if ($stmt->execute()) {
+            $message = "User added successfully.";
+        } else {
+            $errors[] = "Error adding user. Please try again.";
+        }
 
         $stmt->close();
     }
@@ -108,7 +121,12 @@ $conn->close();
             <ul>
                 <li><a class="button manage-button" href="admin_1.php">Manage Users</a></li>
                 <li><a class="button add-button" href="add_users.php">Add Users</a></li>
-                <li><a class="button add-button" href="register_admin.php">Register Admin</a></li>
+                <?php
+                // Check if the admin_type is 1 before displaying the "Register Admin" link
+                if ($adminType == 1) {
+                    echo "<li><a class='button add-button' href='register_admin.php'>Register Admin</a></li>";
+                }
+                ?>
             </ul>
         </nav>
     </div>
@@ -141,12 +159,7 @@ $conn->close();
                 </tbody>
             </table>
         </section>
-
         <br>
-
-        <footer>
-
-        </footer>
     </div>
 
     <script>

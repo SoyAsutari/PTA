@@ -68,10 +68,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // If there are no validation errors, insert the admin into the database
     if (empty($errors)) {
+        // Set the default admin type to 2
+        $defaultAdminType = 2;
+
+        // Hash the password (you should use a strong hashing algorithm in production)
+        $hashedPassword = password_hash($newAdminPassword, PASSWORD_DEFAULT);
+
         // SQL query to insert the admin into the database
-        $insertQuery = "INSERT INTO admins (username, password) VALUES (?, ?)";
+        $insertQuery = "INSERT INTO admins (username, password, admin_type) VALUES (?, ?, ?)";
         $stmt = $conn->prepare($insertQuery);
-        $stmt->bind_param("ss", $newAdminUsername, $newAdminPassword);
+        $stmt->bind_param("ssi", $newAdminUsername, $hashedPassword, $defaultAdminType);
 
         if ($stmt->execute()) {
             $message = "Admin registered successfully.";

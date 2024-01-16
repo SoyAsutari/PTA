@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  php:
+    image: php:latest
+    volumes:
+      - C:\xampp\htdocs\System Insurance:/var/www/html
+    depends_on:
+      - mailhog
+
+  mailhog:
+    image: mailhog/mailhog:latest
+    ports:
+      - "8025:8025"

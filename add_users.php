@@ -1,4 +1,12 @@
 <?php
+require "C:/xampp/htdocs/System Insurance/PHPMailer-master/src/PHPMailer.php";  // Adjust the path accordingly
+require "C:/xampp/htdocs/System Insurance/PHPMailer-master/src/SMTP.php";  // Adjust the path accordingly
+
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
 // Start the session to access session variables
 session_start();
 
@@ -7,8 +15,9 @@ if (!isset($_SESSION['username'])) {
     header('Location: login_admin.php');
     exit();
 }
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logout'])) {
-    // stop the session and redirect to the login page
+    // Stop the session and redirect to the login page
     session_destroy();
     header('Location: login_cust.php');
     exit();
@@ -17,6 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logout'])) {
 // Get the admin username from the session
 $adminUsername = $_SESSION['username'];
 $username = $id = $tel = $email = $address = $model = $plate = $type = $plans = $expiry_date = $status = "";
+
 // Define an array to store validation errors
 $errors = [];
 
@@ -47,7 +57,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $type = sanitizeInput($_POST['type']);
     $plans = sanitizeInput($_POST['plans']);
     $expiry_date = sanitizeInput($_POST['expiry_date']);
-    
+
+    // Generate a random 7-digit number for the insurance ID
+    $insuranceId = str_pad(mt_rand(1, 9999999), 7, '0', STR_PAD_LEFT);
+
     // Calculate the status based on the expiry date and current date
     $expiryDate = new DateTime($expiry_date);
     $currentDate = new DateTime();
@@ -61,12 +74,56 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // If there are no validation errors, insert the user into the database
     if (empty($errors)) {
         // SQL query to insert the user into the database
-        $insertQuery = "INSERT INTO users (username, id, tel, email, address, model, plate, type, plans, expiry_date, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $insertQuery = "INSERT INTO users (insurance_id, username, id, tel, email, address, model, plate, type, plans, expiry_date, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($insertQuery);
-        $stmt->bind_param("sssssssssss", $username, $id, $tel, $email, $address, $model, $plate, $type, $plans, $expiry_date, $status);
+        $stmt->bind_param("ssssssssssss", $insuranceId, $username, $id, $tel, $email, $address, $model, $plate, $type, $plans, $expiry_date, $status);
 
         if ($stmt->execute()) {
-            $message = "User added successfully.";
+            // Send email using PHPMailer
+            try {
+                $mail = new PHPMailer(true);
+
+                // Server settings
+                $mail->isSMTP();
+                $mail->Host = 'sandbox.smtp.mailtrap.io';  // Replace with your SMTP server address
+                $mail->SMTPAuth = true;
+                $mail->Username = '17b3a72309a8c1';  // Replace with your Mailtrap username
+                $mail->Password = 'c1db3769873a17';  // Replace with your Mailtrap password
+                $mail->SMTPSecure = 'tls';  // Enable TLS encryption
+                $mail->Port = 2525;  // Replace with your SMTP port
+
+                // Sender and recipient settings
+                $mail->setFrom('Jufrifirdaus321@gmail.com', 'Jufri Firdaus');
+                $mail->addAddress($email, $username);  // Use the user's email and username
+
+                //content
+                $mail->isHTML(true);
+                $mail->Subject = 'New User Added';
+                $mail->Body = "Hello $username,\n\nWe are pleased to inform you that a new user has been successfully added to our system with the following details:\n\n" .
+                "Insurance ID: $insuranceId\n" .
+                "Full Name: $username\n" .
+                "Identification Number (IC): $id\n" .
+                "Contact Number: $tel\n" .
+                "Email Address: $email\n" .
+                "Residential Address: $address\n" .
+                "Vehicle Model: $model\n" .
+                "Vehicle Plate Number: $plate\n" .
+                "Vehicle Type: $type\n" .
+                "Insurance Plans: $plans\n" .
+                "Expiry Date: $expiry_date\n" .
+                "Account Status: $status\n\n" .
+                "Thank you for choosing our insurance system. If you have any questions or require further assistance, feel free to contact our support team.\n\n" .
+                "For more information, please visit our website: [Your Website URL]\n\n" .
+                "Best regards,\nInsurance KVKS";
+                
+
+                
+                $mail->send();
+            } catch (Exception $e) {
+                echo "Mailer Error: {$mail->ErrorInfo}";
+            }
+
+            $message = "User added successfully with insurance ID: $insuranceId";
         } else {
             $errors[] = "Error adding user. Please try again.";
         }
@@ -96,7 +153,7 @@ function sanitizeInput($data)
 <body>
     <header>
         <img src="gambar/LOGO.png" width="200" height="90">
-        <h1>Welcome, <?php echo $adminUsername; ?>!</h1> <!-- Display the admin's username -->
+        <h1>Welcome, <?php echo $adminUsername; ?>!</h1>
         <form method="post" onsubmit="return confirm('Are you sure you want to logout?');">
             <button type="submit" name="logout" class="button logout-button">Logout</button>
         </form>
@@ -227,7 +284,7 @@ function sanitizeInput($data)
        
     <div class="kotak">
         <?php
-        // Calculate expiry date as one year from the current date
+
         $oneYearLater = date('Y-m-d', strtotime('+1 year'));
         ?>
         <input type="date" id="expiry_date" name="expiry_date" value="<?php echo $oneYearLater; ?>" required readonly>
@@ -239,7 +296,7 @@ function sanitizeInput($data)
                 <label for="status">Status</label>
                 </div>
                 <div class="kotak">
-                <input type="text" id="status" name="status" value="Leave this section"<?php echo $status; ?>" readonly>
+                <input type="text" id="status" name="status" value="<?php echo $status; ?>" readonly>
                 </div>
                 </div>
 
@@ -267,6 +324,5 @@ function sanitizeInput($data)
            
         </section>
     </div>
-    </main>
 </body>
 </html>
