@@ -131,6 +131,7 @@ footer a {
 
 /* CSS for button colors (Logout) */
 .logout-button {
+  font: 16px sans-serif;
   display: inline-block;
   padding: 0.5rem 1rem;
   background-color: rgb(255, 0, 0);
@@ -161,4 +162,160 @@ footer a {
 
 h1 {
     color: #000000;
+  }
+  
+  @media (max-width: 430px) {
+  
+    body {
+      background-image: url(gambar/tile_background.png);
+      background-color: #f5e7e7;
+      font-size: 12px;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+    header {
+      height: 70px;
+      color: rgb(255, 255, 255);
+      background-color: #00ccff;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    header h1 {
+      font-size: 12px;
+    }
+    
+    header img {
+      width: 100px;
+      height: 50px;
+      border-radius: 5% 5%;
+  
+    }
+  
+    nav ul {
+      padding: 10px;
+      margin-left: 0px;
+      margin-bottom: 5px;
+      margin-top: 5px;
+      list-style: none;
+      display: flex;
+    }
+    
+    nav li {
+      margin-right: 10px;
+    }
+    
+    nav a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    nav a:hover {
+      bcolor: #ddd;
+    }
+  
+    div {
+      bcolor: #4000;
+    }
+  
+    .button {
+      display: inline-block;
+      padding: 5px 10px; 
+      background-color: #1d9485; 
+      color: white; 
+      font-size: 10px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px; 
+      margin-right: 3px; 
+    }
+
+    .buton {
+      display: inline-block;
+      padding: 10px 20px; 
+      background-color: #1d9485; 
+      color: white; 
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px; 
+      margin-left: 3px; 
+    }
+
+    .btn {
+      font-size: 10px;
+      display: inline-block;
+      padding: 5px 10px;
+      background-color: #1d9485;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    
+    .btn:hover {
+      background-color: #555;
+    }
+  
+    .logout-button {
+      display: inline-block;
+      padding: 5px 10px;
+      background-color: rgb(255, 0, 0);
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+      border-radius: 5px;
+      border: 0;
+      transition: background-color 0.3s;
+    }
+    
+    .logout-button {
+      font-size: 10px;
+      
+    }
+
+.pad {
+  background-color: #ffffffa4;
+  border: 1px solid #ffffff;
+  border-radius: 12px;
+}
+
+.pad2 {
+  border-radius: 32px;
+  border: 1px solid #ffffff;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+div.pad2 {
+  background-color: rgba(184, 184, 184, 0.6);
+}
+
+table {
+  width: 80%; 
+  border-collapse: collapse; 
+  margin: 20px auto; 
+  background-color: #f5f5f5; 
+}
+
+/* CSS for table headers */
+table th {
+  font-size: 11px;
+  background-color: #1d9485; 
+  color: white; 
+  padding: 5px; 
+  text-align: left; 
+}
+
+/* CSS for table rows */
+table td {
+  font-size: 11px;
+  border: 1px solid #ddd;
+  padding: 5px; 
+}
   }

@@ -66,20 +66,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Validate input fields (you can add more specific validation as needed)
     if (empty($username) || empty($id) || empty($tel) || empty($email) || empty($address) || empty($model) || empty($plate) || empty($type)) {
         $errors[] = "All fields are required.";
-    }
+    
 
-    // If there are no validation errors, insert the user into the database
-    if (empty($errors)) {
-        // SQL query to insert the user into the database
-        $insertQuery = "INSERT INTO users (username, id, tel, email, address, model, plate, type, plans, expiry_date, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        $stmt = $conn->prepare($insertQuery);
-        $stmt->bind_param("sssssssssss", $username, $id, $tel, $email, $address, $model, $plate, $type, $plans, $expiry_date, $status);
-
-        if ($stmt->execute()) {
-            $message = "User added successfully.";
-        } else {
-            $errors[] = "Error adding user. Please try again.";
-        }
 
         $stmt->close();
     }

@@ -101,8 +101,13 @@ footer {
     text-align: center;
     padding: 10px;
 }
+
+button {
+  font: 16px sans-serif;
+}
 /*delete user*/
 .delete-button {
+  width: 120px;
   display: inline-block;
   padding: 10px 10px;
   background-color: rgb(255, 0, 0);
@@ -111,7 +116,7 @@ footer {
   border-radius: 5px;
   border: 0;
   transition: background-color 0.3s;
-  margin-left: 550px;
+  margin-left: 520px;
 }
 
 /* Style for the Logout button on hover */
@@ -121,17 +126,21 @@ footer {
 
 /* Additional styles for consistency with styles_user_1.css */
 .return-button {
-    background-color: #1d9485;
-    color: rgb(253, 253, 253);
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    text-decoration: none;
-    border-radius: 5px;
+  height: 22px;
+  display: inline-block;
+  padding: 5px 10px 10px 10px; 
+  background-color: #1d9485; 
+  color: white; 
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px; 
+  margin-right: 10px; 
 }
 
+/* Style for the Return button on hover */
 .return-button:hover {
-    background-color: #BCBCBC;
+  background-color: #BCBCBC; 
 }
 
 /* Additional styles for consistency with styles_user_1.css */
@@ -171,4 +180,174 @@ footer {
 
   .lol {
     display: flex;
+  }
+
+  @media (max-width: 430px) {
+  
+    body {
+      background-image: url(gambar/tile_background.png);
+      background-color: #f5e7e7;
+      font-size: 12px;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+    header {
+      height: 70px;
+      color: rgb(255, 255, 255);
+      background-color: #00ccff;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    header h1 {
+      font-size: 12px;
+    }
+    
+    header img {
+      width: 100px;
+      height: 50px;
+      border-radius: 5% 5%;
+  
+    }
+  
+    nav ul {
+      
+      list-style: none;
+      display: flex;
+    }
+    
+    nav li {
+      margin-right: 10px;
+    }
+    
+    nav a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    nav a:hover {
+      bcolor: #ddd;
+    }
+  
+    div {
+      bcolor: #4000;
+    }
+  
+    .btn {
+      font-size: 10px;
+      display: inline-block;
+      padding: 5px 10px;
+      background-color: #1d9485;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    
+    .btn:hover {
+      background-color: #555;
+    }
+  
+    .logout-button {
+      display: inline-block;
+      padding: 5px 10px;
+      background-color: rgb(255, 0, 0);
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+      border-radius: 5px;
+      border: 0;
+      transition: background-color 0.3s;
+    }
+    
+    .logout-button {
+      font-size: 10px;
+      
+    }
+
+    .return-button {
+      font-size: 10px;
+      height: 17px;
+      display: inline-block;
+      padding: 5px 10px; 
+      background-color: #1d9485; 
+      color: white; 
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px; 
+      margin-right: 10px; 
+    }
+
+    .renew-button {
+      height: 27px;
+      font-size: 10px;
+      display: inline-block;
+      padding: 5px 10px;
+      background-color: #1d9485;
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+      border-radius: 5px;
+      border: 0;
+      transition: background-color 0.3s;
+      margin-left: 10px;
+    }
+
+    .delete-button {
+      height: 27px;
+      width: 120px;
+      display: inline-block;
+      padding: 5px 10px;
+      background-color: rgb(255, 0, 0);
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+      border-radius: 5px;
+      border: 0;
+      transition: background-color 0.3s;
+      margin-left: 90px;
+    }
+    
+    button {
+      font: 10px sans-serif;
+    }
+    
+    /* Style for the Return button on hover */
+    .return-button:hover {
+      background-color: #BCBCBC; 
+    }
+
+    main {
+      max-width: 800px;
+      margin: 20px 5px;
+      padding: 5px;
+      background-color: #7e7e7e8a;
+      box-shadow: 0 0 10px rgba(242, 241, 241, 0.5);
+      border-radius: 10px;
+  }
+
+  .merah {
+    border: 3px;
+    font-size: 1.17em;
+    margin-bottom: 10px;
+    color: #000000;
+    text-align: center;
+}
+
+.user-table th,
+.user-table td {
+    padding: 5px;
+    font-size: 11px;
+    text-align: left;
+    border-bottom: 1px solid #eceaea;
+}
+
+.user-table {
+  border: 3px solid #ddd;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
   }

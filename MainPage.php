@@ -12,7 +12,6 @@
   <img  src="gambar/LOGO.png">
   <nav>
     <ul>
-      <li><a href="MainPage.php" class="btn"> Home</a></li>
       <li><a href="#1" class="btn">Manual</a></li>
       <li><a href="#2" class="btn">Ejen</a></li>
       <li><a href="#3" class="btn">Policies</a></li>
@@ -35,10 +34,12 @@
   </section>
   <br>
   <section class="intro1" >
+    <center>
     <div class="intro2">
     <p><h2>Selamat datang ke (Nama Syarikat) Insurans Kenderaan, di mana keselamatan, keselesaan, dan kepuasan anda dalam setiap perjalanan menjadi keutamaan kami.</h2></p>
-    <p><h2>Terima kasih kerana memilih (Nama Syarikat) Insurans Kenderaan sebagai rakan perjalanan anda. Hubungi kami hari ini untuk mendapatkan penyelesaian insurans yang sesuai untuk melindungi kenderaan anda dan memberikan perlindungan maksimum pada setiap perjalanan anda.</2></p>
+    <p><h4>Terima kasih kerana memilih (Nama Syarikat) Insurans Kenderaan sebagai rakan perjalanan anda. Hubungi kami hari ini untuk mendapatkan penyelesaian insurans yang sesuai untuk melindungi kenderaan anda dan memberikan perlindungan maksimum pada setiap perjalanan anda.</h4></p>
     </div>
+  </center>
     <div class="intro3">
       <img src="gambar/car1.png">
     </div>
@@ -47,34 +48,52 @@
     <center id="1"><h2 >Manual Pengguna</h2></center>
   <section class="user-manual" >
     <div class="manual">
+      <center>
   <img src="gambar/manual.png">
+   </center>
    </div>
   </section>
   <br>
     <center id="2"><h2 id="2">Ejen Kami</h2></center>
+    <center>
   <section class="featured-agent" >
-    
     <div class="agent">
       <center><img src="gambar/profileagent.png"></center>
-      <center><h3>Syauki</h3></center>
+      <center>
+        <h3>Syauki</h3>
+        <ul class="whatapp" >
+        <li><a href="#https://wa.me/0197837854" class="btn">Hubungi saya</a></li>
+       </ul>
+    </center>
       <p>"Sukses dalam jual beli bukan hanya tentang menjual produk, tetapi juga tentang membangun hubungan.</p>
       <p>Jadilah agen yang memahami kebutuhan pelanggan dan memberikan solusi terbaik untuk mereka."</p>
     </div>
     <div class="agent">
       <center><img src="gambar/profileagent.png"></center>
-      <center><h3>Tupai</h3></center>
+      <center>
+        <h3>Tupai</h3>
+      <ul class="whatapp" >
+        <li><a href="#https://wa.me/0197837854" class="btn">Hubungi saya</a></li>
+       </ul>
+      </center>
       <p>"Kepercayaan adalah mata uang bisnis yang paling berharga.</p>
       <p>Sebagai agen, jaga kepercayaan pelanggan Anda, dan kesuksesan akan mengikuti."</p>
     </div>
     <div class="agent">
       <center><img src="gambar/profileagent.png"></center>
-      <center><h3>Icap</h3></center>
+      <center>
+        <h3>Icap</h3>
+      <ul class="whatapp" >
+        <li><a href="#https://wa.me/0197837854" class="btn">Hubungi saya</a></li>
+       </ul>
+      </center>
       <p>"Kualitas terbaik tidak pernah berbohong pelanggan tidak pernah lupa. </p>
       <p>Misi agen adalah memberikan layanan terbaik dalam setiap transaksi"</p>
     </div>
   
   <br>
   </section>
+</center>
   <br>
 <center><h2 id="3">Featured Policies</h2></center>
   <section class="featured-policies" >
